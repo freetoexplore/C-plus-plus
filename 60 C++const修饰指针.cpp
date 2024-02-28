@@ -2,7 +2,7 @@
 using namespace std;
 #include <string>
 
-int main() {
+int main60() {
 
 	int a = 10;
 	int b = 10;
