@@ -144,12 +144,17 @@ void changeContact(AddressBook* abs) {
 };
 
 //6
-//void delAll(AddressBook* abs) {
-	//abs->m_size = 0;
-	//cout << "Contact cleaned" << endl; 
-	//system("pause");
-	//system("cls");
-//};
+void delAll(AddressBook* abs) {
+	string flag = "";
+	cout << "Are you sure to remove all contact?(Y/N)" << endl;
+	cin >> flag;
+	if (flag == "Y") {
+		abs->m_size = -1;
+		cout << "Contact cleaned" << endl;
+		//system("pause");
+		//system("cls");
+	}
+};
 
 
 int main() {
@@ -184,9 +189,9 @@ int main() {
 		case 5:
 			changeContact(&abs);
 			break;
-		//case 6:
-			//delAll(&abs);
-			//break;
+		case 6:
+			delAll(&abs);
+			break;
 		default:
 			break;
 
