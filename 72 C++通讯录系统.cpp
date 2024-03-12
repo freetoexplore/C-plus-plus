@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 #include <string>
 
@@ -56,7 +56,7 @@ void addPerson(AddressBook * abs) {
 		cin >> aphone;
 		abs->PersonArray[abs->m_size].phone = aphone;
 
-		abs->m_size = abs->m_size + 1;
+		abs->m_size++;
 	}
 	;
 };
@@ -105,8 +105,8 @@ void findContact(AddressBook* abs) {
 	{
 		if (abs->PersonArray[i].name == dname) {
 			cout << abs->PersonArray[i].name << " " << abs->PersonArray[i].gender << " " << abs->PersonArray[i].age << " " << abs->PersonArray[i].phone << endl;
+			break;
 		}
-		else { cout << "peron not found" << endl; }
 	}
 	
 
@@ -138,16 +138,18 @@ void changeContact(AddressBook* abs) {
 			abs->PersonArray[i].gender = cgender;
 			abs->PersonArray[i].age = cage; 
 			abs->PersonArray[i].phone = cphone;
+			break;
 		}
-		else { cout << "peron not found" << endl; }
 	}
 };
 
 //6
-void delAll(AddressBook* abs) {
-	abs->m_size = 0;
-	cout << "Contact cleaned" << endl; 
-};
+//void delAll(AddressBook* abs) {
+	//abs->m_size = 0;
+	//cout << "Contact cleaned" << endl; 
+	//system("pause");
+	//system("cls");
+//};
 
 
 int main() {
@@ -182,8 +184,11 @@ int main() {
 		case 5:
 			changeContact(&abs);
 			break;
-		case 6:
-			delAll(&abs);
+		//case 6:
+			//delAll(&abs);
+			//break;
+		default:
+			break;
 
 		}
 	}
